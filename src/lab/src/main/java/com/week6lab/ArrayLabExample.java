@@ -69,35 +69,26 @@ public class ArrayLabExample {
         while (p1 < n1 && p2 < n2) {
             int comparison = class1[p1].compareTo(class2[p2]);
 
-            if (comparison < 0) {
+            if (comparison <= 0) {
                 classResult[p3] = class1[p1];
                 p1++;
-            } else if (comparison > 0) {
+            } else {
                 classResult[p3] = class2[p2];
                 p2++;
-                // Both string are equal
-            } else {
-                classResult[p3] = class1[p1];
-                p3++;
-                classResult[p3] = class2[p2];
             }
             p3++;
         }
 
-        if (p1 <= n1 - 1) {
-            while (p1 < n1) {
-                classResult[p3] = class1[p1];
-                p1++;
-                p3++;
-            }
+        while (p1 < n1) {
+            classResult[p3] = class1[p1];
+            p1++;
+            p3++;
         }
 
-        if (p2 <= n2 - 1) {
-            while (p2 < n2) {
-                classResult[p3] = class2[p2];
-                p2++;
-                p3++;
-            }
+        while (p2 < n2) {
+            classResult[p3] = class2[p2];
+            p2++;
+            p3++;
         }
 
         // print the classes joined together
